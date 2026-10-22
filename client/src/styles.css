@@ -788,9 +788,17 @@ button {
 }
 .strategy-card:nth-child(2) {
   background: #e9e2f0;
+  color: #332d3a;
+  --ink: #332d3a;
+  --muted: #675d73;
+  --line: #cfc4d9;
 }
 .strategy-card:nth-child(3) {
   background: #eff0dd;
+  color: #332d3a;
+  --ink: #332d3a;
+  --muted: #675d73;
+  --line: #d1d4b8;
 }
 .strategy-top {
   display: flex;
@@ -1082,6 +1090,10 @@ button {
   border-color: #c8b5dd;
   box-shadow: 0 9px 25px #59426b1c;
   transform: translateY(-8px);
+  color: #332d3a;
+  --ink: #332d3a;
+  --muted: #675d73;
+  --line: #cfc4d9;
 }
 .plan-top {
   display: flex;
@@ -1178,6 +1190,8 @@ button {
   align-items: center;
   position: relative;
   box-shadow: var(--inset);
+  color: #332d3a;
+  --muted: #675d73;
 }
 .review-mark {
   font: 130px Georgia;
@@ -1419,6 +1433,9 @@ button {
   box-shadow:
     inset 0 5px 15px #fff6,
     inset 0 -5px 15px #72599420;
+  color: #332d3a;
+  --ink: #332d3a;
+  --muted: #675d73;
 }
 .newsletter-stamp {
   width: 42px;
