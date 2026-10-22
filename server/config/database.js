@@ -2,10 +2,10 @@ import mongoose from "mongoose";
 export async function connectDatabase() {
   try {
     await mongoose.connect(
-      process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/star_technovation",
+      process.env.MONGODB_URI,
       { serverSelectionTimeoutMS: 2500 },
     );
-    console.log("Connected to local MongoDB.");
+    console.log("Connected to MongoDB.");
   } catch {
     console.log("MongoDB unavailable; using the local JSON database.");
   }
