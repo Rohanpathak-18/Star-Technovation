@@ -3,6 +3,7 @@ export const plans = [
     name: "Monthly",
     code: "01 / MONTHLY",
     price: "₹9,999",
+    suffix: "+ 18% GST",
     summary: "A monthly automated strategy plan.",
     features: ["1–2 strategy coding", "Completely automated"],
     action: "Enquire now",
@@ -11,6 +12,7 @@ export const plans = [
     name: "Quarterly",
     code: "02 / QUARTERLY",
     price: "₹24,999",
+    suffix: "+ 18% GST",
     summary: "More strategies, with priority support.",
     features: [
       "3–5 strategy coding",
@@ -26,6 +28,7 @@ export const plans = [
     name: "Half Yearly",
     code: "03 / HALF YEARLY",
     price: "₹49,999",
+    suffix: "+ 18% GST",
     summary: "A six month automated strategy plan.",
     features: [
       "6–8 strategy coding",
@@ -39,6 +42,7 @@ export const plans = [
     name: "Yearly",
     code: "04 / YEARLY",
     price: "₹84,999",
+    suffix: "+ 18% GST",
     summary: "Our most complete annual plan.",
     features: [
       "9–12 strategy coding",

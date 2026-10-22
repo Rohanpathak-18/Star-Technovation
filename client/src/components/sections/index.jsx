@@ -218,6 +218,7 @@ export function PricingSection({ choosePlan }) {
             <p>{p.summary}</p>
             <div className="plan-price">
               <strong>{p.price}</strong>
+              <span>{p.suffix}</span>
             </div>
             <button
               className={`button ${p.featured ? "button-lime" : "button-outline"}`}
