@@ -6,13 +6,18 @@ import { connectDatabase } from "./config/database.js";
 import apiRoutes from "./routes/index.js";
 
 const app = express();
+const allowedOrigins = [
+  "https://star-technovation.vercel.app",
+  "http://localhost:5173",
+  ...(process.env.CLIENT_URL || "")
+    .split(",")
+    .map((origin) => origin.trim())
+    .filter(Boolean),
+];
 
 app.use(
   cors({
-    origin: [
-      "https://star-technovation.vercel.app",
-      "http://localhost:5173",
-    ],
+    origin: [...new Set(allowedOrigins)],
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
   }),

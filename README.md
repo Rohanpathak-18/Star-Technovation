@@ -40,6 +40,16 @@ The server connects to the local MongoDB database named `star_technovation` when
 
 The admin account is created by registering the address configured in `ADMIN_EMAIL`. The public admin route is `/admin`. Contact enquiries, booking requests, newsletter subscriptions, and registrations are persisted locally.
 
+## Deploy to Vercel
+
+Deploy the frontend and API as two Vercel projects:
+
+1. For the API project, set **Root Directory** to `server`. The [`server/vercel.json`](server/vercel.json) configuration routes requests through the Express app, including CORS preflight requests.
+2. Set the API project's `MONGODB_URI`, `JWT_SECRET`, and `ADMIN_EMAIL` environment variables in Vercel. Use a MongoDB service reachable from Vercel; the local file store is not persistent serverless storage.
+3. For the frontend project, keep the repository root as its Root Directory and set the build command to `npm run build` and output directory to `dist`.
+4. Set `VITE_API_URL` on the frontend project to the API's deployment origin, for example `https://star-technovation-server.vercel.app`. Do not add `/api`; the client adds that path itself. Redeploy the frontend after changing this variable because Vite embeds it at build time.
+5. The API allows the production frontend origin `https://star-technovation.vercel.app` and local development origin `http://localhost:5173`. If the frontend uses another production domain, add it to the CORS allowlist in `server/index.js` and redeploy the API.
+
 ## Integration points
 
 - **Online payment:** pricing and plan selection are present. Add a provider such as Stripe or Razorpay and credentials before collecting payments; checkout is not charged in this demo.
