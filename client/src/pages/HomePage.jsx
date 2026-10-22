@@ -66,7 +66,6 @@ export default function HomePage() {
   const [user, setUser] = useState(initialUser);
   const [notice, setNotice] = useState("");
   const [busy, setBusy] = useState(false);
-  const [billing, setBilling] = useState("monthly");
   const [admin, setAdmin] = useState(location.pathname === "/admin");
   const [adminData, setAdminData] = useState(null);
   const [notifyOpen, setNotifyOpen] = useState(false);
@@ -122,23 +121,7 @@ export default function HomePage() {
     setModal(mode);
     setMenu(false);
   };
-  const choosePlan = async (plan) => {
-    if (plan === "Constellation") {
-      setModal("booking");
-      return;
-    }
-
-    try {
-      const checkout = await api.createCheckout({ plan, billing });
-      if (checkout.url) {
-        window.location.assign(checkout.url);
-        return;
-      }
-      setNotice(checkout.message);
-    } catch (error) {
-      setNotice(error.message);
-    }
-  };
+  const choosePlan = () => setModal("booking");
   if (admin)
     return (
       <AdminPage
@@ -176,7 +159,7 @@ export default function HomePage() {
               <span aria-hidden="true"></span> New: May market letter is here.
             </p>
             <p>
-              <span aria-hidden="true"></span> Orbit plans now include risk alerts.
+              <span aria-hidden="true"></span> Explore our automated strategy plans.
             </p>
           </div>
         )}
@@ -347,9 +330,6 @@ export default function HomePage() {
       <ManifestoSection />
 
       <PricingSection
-        billing={billing}
-        setBilling={setBilling}
-        setModal={setModal}
         choosePlan={choosePlan}
       />
 

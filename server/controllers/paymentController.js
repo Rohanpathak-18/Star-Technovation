@@ -1,17 +1,17 @@
 import { createCheckoutSession } from "../services/paymentProvider.js";
 
-const plans = new Set(["Signal", "Orbit", "Constellation"]);
+const plans = new Set(["Monthly", "Quarterly", "Half Yearly", "Yearly"]);
 
 export async function createCheckout(req, res) {
-  const { plan, billing = "monthly" } = req.body;
+  const { plan } = req.body;
 
-  if (!plans.has(plan) || !["monthly", "yearly"].includes(billing)) {
+  if (!plans.has(plan)) {
     return res
       .status(400)
-      .json({ message: "Choose a valid plan and billing period." });
+      .json({ message: "Choose a valid plan." });
   }
 
-  const checkout = await createCheckoutSession({ plan, billing });
+  const checkout = await createCheckoutSession({ plan });
 
   if (!checkout.configured) {
     return res.status(503).json({ message: checkout.message });

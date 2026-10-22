@@ -188,7 +188,7 @@ export function ManifestoSection() {
   );
 }
 
-export function PricingSection({ billing, setBilling, setModal, choosePlan }) {
+export function PricingSection({ choosePlan }) {
   return (
     <section className="section pricing-section" id="pricing">
       <div className="section-heading pricing-heading">
@@ -201,24 +201,7 @@ export function PricingSection({ billing, setBilling, setModal, choosePlan }) {
           </h2>
         </div>
         <div className="pricing-side">
-          <p>
-            Start with what you need today. The good stuff, without the
-            fine-print dance.
-          </p>
-          <div className="billing-toggle">
-            <button
-              className={billing === "monthly" ? "active" : ""}
-              onClick={() => setBilling("monthly")}
-            >
-              Monthly
-            </button>
-            <button
-              className={billing === "yearly" ? "active" : ""}
-              onClick={() => setBilling("yearly")}
-            >
-              Yearly <span>−15%</span>
-            </button>
-          </div>
+          <p>Choose a strategy plan with clear pricing. GST is additional.</p>
         </div>
       </div>
       <div className="pricing-grid">
@@ -234,12 +217,7 @@ export function PricingSection({ billing, setBilling, setModal, choosePlan }) {
             <h3>{p.name}</h3>
             <p>{p.summary}</p>
             <div className="plan-price">
-              <strong>
-                {billing === "yearly" && p.price.startsWith("₹")
-                  ? `₹${Math.round(Number(p.price.replace(/[₹,]/g, "")) * 0.85).toLocaleString("en-IN")}`
-                  : p.price}
-              </strong>
-              <span>{p.suffix}</span>
+              <strong>{p.price}</strong>
             </div>
             <button
               className={`button ${p.featured ? "button-lime" : "button-outline"}`}
@@ -263,8 +241,8 @@ export function PricingSection({ billing, setBilling, setModal, choosePlan }) {
         ))}
       </div>
       <p className="pricing-note">
-        <LockKeyhole size={13} /> No lock-in. No surprise fees.{" "}
-        <a href="#contact">Need something bespoke?</a>
+        <LockKeyhole size={13} /> Prices are before 18% GST. Contact us to get
+        started.
       </p>
     </section>
   );

@@ -3,7 +3,7 @@
  * Keep provider-specific SDK calls in this module so controllers and UI do
  * not depend on a particular payment vendor.
  */
-export async function createCheckoutSession({ plan, billing }) {
+export async function createCheckoutSession({ plan }) {
   if (!process.env.STRIPE_SECRET_KEY && !process.env.RAZORPAY_KEY_ID) {
     return {
       configured: false,
@@ -19,6 +19,5 @@ export async function createCheckoutSession({ plan, billing }) {
     message:
       "Payment credentials are present, but the provider checkout adapter still needs setup.",
     requestedPlan: plan,
-    billing,
   };
 }

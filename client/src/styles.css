@@ -1065,34 +1065,9 @@ button {
   line-height: 1.8;
   margin: 0 0 16px;
 }
-.billing-toggle {
-  display: inline-flex;
-  background: var(--panel);
-  padding: 3px;
-  border-radius: 20px;
-  box-shadow: var(--inset);
-}
-.billing-toggle button {
-  border: 0;
-  background: none;
-  padding: 8px 12px;
-  border-radius: 18px;
-  font-size: 10px;
-  color: var(--muted);
-  cursor: pointer;
-}
-.billing-toggle button.active {
-  background: var(--paper);
-  color: var(--ink);
-  box-shadow: 0 2px 5px #28202c20;
-}
-.billing-toggle button span {
-  color: #829c2e;
-  margin-left: 3px;
-}
 .pricing-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 14px;
 }
 .plan-card {
@@ -2319,6 +2294,9 @@ button {
   .section {
     padding-left: 7%;
     padding-right: 7%;
+  }
+  .pricing-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .footer-links {
     gap: 40px;
