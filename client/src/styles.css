@@ -2371,8 +2371,13 @@ button {
   .header-actions {
     gap: 8px;
   }
-  .theme-toggle {
-    display: none;
+  .header-actions .theme-toggle {
+    display: grid;
+    min-width: 38px;
+    min-height: 38px;
+    padding: 8px;
+    border: 1px solid var(--line);
+    border-radius: 5px;
   }
   .login-link,
   .user-pill {
