@@ -403,6 +403,12 @@ export function ContactSection({ submit, busy }) {
           a little about what you’re working on.
         </p>
         <div className="contact-direct">
+          <span>
+            <span aria-hidden="true">⌖</span> Noida, Sector 63
+          </span>
+          <a href="tel:+919682445183">
+            <ShieldCheck size={14} /> Compliance: +91 96824 45183
+          </a>
           <a href="mailto:hello@startechnovation.com">
             <Mail size={15} /> hello@startechnovation.com
           </a>

@@ -365,6 +365,8 @@ export default function HomePage() {
               <a href="/terms">Terms of use</a>
               <a href="/risk-disclosure">Risk disclosure</a>
               <a href="mailto:hello@startechnovation.com">Get in touch</a>
+              <span className="footer-contact-detail">Noida, Sector 63</span>
+              <a href="tel:+919682445183">Compliance: +91 96824 45183</a>
             </div>
             <div>
               <span>FIND US</span>
