@@ -1181,6 +1181,67 @@ button {
   text-underline-offset: 3px;
 }
 
+.payment-section {
+  padding: 88px 9%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 390px);
+  gap: 9%;
+  align-items: center;
+  background:
+    radial-gradient(ellipse at 8% 0%, #6750a719, transparent 38%),
+    var(--panel);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.payment-copy h2 {
+  font-size: clamp(42px, 5vw, 60px);
+  line-height: 1.06;
+  margin: 21px 0;
+}
+.payment-copy > p {
+  max-width: 390px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.85;
+}
+.payment-details {
+  display: grid;
+  gap: 12px;
+  margin-top: 26px;
+  color: var(--muted);
+  font-size: 11px;
+}
+.payment-details b {
+  display: inline-block;
+  min-width: 88px;
+  color: var(--ink);
+  font: 10px "DM Mono";
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.payment-qr-card {
+  max-width: 390px;
+  padding: 12px;
+  background: #fff;
+  border: 1px solid #dcd5eb;
+  border-radius: 8px;
+  box-shadow: 0 18px 50px #34205318;
+}
+.payment-qr-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+.payment-qr-card > span {
+  display: block;
+  padding: 12px 4px 3px;
+  color: #554776;
+  text-align: center;
+  font: 10px "DM Mono";
+  letter-spacing: 0.09em;
+}
+
 .review-section {
   background: #eae2f0;
   padding: 76px 11%;
@@ -2325,6 +2386,11 @@ button {
   .contact-section {
     gap: 7%;
   }
+  .payment-section {
+    padding-left: 6%;
+    padding-right: 6%;
+    gap: 6%;
+  }
 }
 
 @media (max-width: 720px) {
@@ -2608,6 +2674,15 @@ button {
     grid-template-columns: 1fr;
     gap: 35px;
     padding: 85px 7%;
+  }
+  .payment-section {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 75px 7%;
+  }
+  .payment-qr-card {
+    width: min(100%, 390px);
+    margin: 0 auto;
   }
   .contact-form {
     padding: 21px 17px;

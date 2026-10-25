@@ -38,7 +38,7 @@ const legalContent = {
       },
       {
         title: "Payments and availability",
-        body: "Online checkout is not enabled in this demo. No payment is taken when you select a plan. A paid subscription will require a separate agreement and a configured payment provider.",
+        body: "Selecting a plan does not start a subscription or charge a payment method. UPI payments can be made by scanning the QR code shown on the site. Contact us to confirm the plan, amount, and payment before proceeding.",
       },
       {
         title: "Contact",

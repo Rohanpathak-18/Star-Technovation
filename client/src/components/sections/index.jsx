@@ -249,6 +249,42 @@ export function PricingSection({ choosePlan }) {
   );
 }
 
+export function PaymentSection() {
+  return (
+    <section className="payment-section" id="payment">
+      <div className="payment-copy">
+        <SectionEyebrow>PAYMENT / UPI</SectionEyebrow>
+        <h2>
+          A simple way
+          <br />
+          to <em>pay.</em>
+        </h2>
+        <p>
+          Scan the Star Technovation QR code with your PhonePe or another UPI
+          app. Please include your name or plan in the payment note.
+        </p>
+        <div className="payment-details">
+          <span>
+            <b>Location</b> Noida, Sector 63
+          </span>
+          <a href="tel:+919682445183">
+            <b>Compliance</b> +91 96824 45183
+          </a>
+        </div>
+      </div>
+      <div className="payment-qr-card">
+        <img
+          src="/phonepe-payment.png"
+          alt="Star Technovation UPI payment QR code"
+          width="1086"
+          height="1448"
+        />
+        <span>SCAN WITH PHONEPE / UPI</span>
+      </div>
+    </section>
+  );
+}
+
 export function ReviewsSection() {
   return (
     <section className="review-section">

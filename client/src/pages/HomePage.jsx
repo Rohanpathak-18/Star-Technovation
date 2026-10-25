@@ -42,6 +42,7 @@ import {
   JournalSection,
   ManifestoSection,
   NewsletterSection,
+  PaymentSection,
   PlatformSection,
   PrinciplesSection,
   PricingSection,
@@ -333,6 +334,8 @@ export default function HomePage() {
         choosePlan={choosePlan}
       />
 
+      <PaymentSection />
+
       <ReviewsSection />
 
       <JournalSection />
@@ -357,6 +360,7 @@ export default function HomePage() {
               <a href="#about">About us</a>
               <a href="#products">Platform</a>
               <a href="#pricing">Pricing</a>
+              <a href="#payment">UPI payment</a>
               <a href="#journal">Field notes</a>
             </div>
             <div>
